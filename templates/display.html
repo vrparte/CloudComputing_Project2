@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <div class="container">
+	{% if user %}
+    		<p><strong>Username:</strong> {{ user['username'] }}</p>
+    		<p><strong>First Name:</strong> {{ user['firstname'] }}</p>
+    		<p><strong>Last Name:</strong> {{ user['lastname'] }}</p>
+    		<p><strong>Email:</strong> {{ user['email'] }}</p>
+    		<p><strong>Address:</strong> {{ user['address'] }}</p>
+	{% endif %}
+
+	{% if word_count %}
+            <p><strong>Word Count in Uploaded File:</strong> {{ word_count }}</p>
+            <p><a href="{{ url_for('download') }}" class="btn">Download File</a></p>
+        {% endif %}
+
+	<a href="/">Back to Home</a>
+
+    </div>
+</body>
+</html>
+

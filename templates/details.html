@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Your Details</h1>
+    <div class="container">
+        <form method="POST" action="/details" enctype="multipart/form-data">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="address" placeholder="Address" required></textarea>
+            <input type="file" name="limerick">
+            <input type="submit" value="Submit">
+        </form>
+
+
+        <p><a href="/">Back to Home</a></p>
+    </div>
+</body>
+</html>
